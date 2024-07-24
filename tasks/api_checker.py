@@ -97,15 +97,3 @@ class StarLegend:
             print(f"Error fetching holdings: {response_holdings.status_code}")
 
         return nft_dict
-
-
-async def main():
-    client = Client(private_key=PRIVATE_KEY, network=Networks.opBNB)
-    starlegend = StarLegend(client=client)
-
-    nft_data = await starlegend.get_nft_data_count()
-    print(nft_data)
-
-
-if __name__ == '__main__':
-    asyncio.run(main())
